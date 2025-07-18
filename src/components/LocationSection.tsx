@@ -39,7 +39,7 @@ const LocationSection = () => {
               {/* You can replace this with actual Google Maps embed */}
               <iframe
                 className="absolute inset-0 w-full h-full"
-                src="https://share.google/NJF77nsn9jisccjzV"
+                src="https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=Antalya+Kaş+Kalkan&zoom=12"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
