@@ -19,7 +19,7 @@ const HeroSection = () => {
         backgroundImage: `linear-gradient(rgba(13, 18, 30, 0.8), rgba(13, 18, 30, 0.6)), url(${heroBackground})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        backgroundAttachment: 'fixed'
+        backgroundAttachment: window.innerWidth > 768 ? 'fixed' : 'scroll'
       }}
     >
       {/* Animated background overlay */}
@@ -41,7 +41,7 @@ const HeroSection = () => {
         ))}
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 text-center">
         {/* Trust indicators */}
         <div className="flex items-center justify-center gap-2 mb-6 fade-in-up">
           <div className="flex">
@@ -53,7 +53,7 @@ const HeroSection = () => {
         </div>
 
         {/* Main headline */}
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 leading-tight fade-in-up">
+        <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black mb-6 leading-tight fade-in-up">
           <span className="text-gradient">Kaş & Kalkan</span>
           <br />
           <span className="text-foreground">Bölgesinde</span>
@@ -65,33 +65,33 @@ const HeroSection = () => {
 
         {/* Driver name */}
         <div className="mb-8 fade-in-up">
-          <p className="text-2xl md:text-3xl font-bold text-primary mb-2">Gökhan Taxi</p>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xl sm:text-2xl md:text-3xl font-bold text-primary mb-2">Gökhan Taxi</p>
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
             Hemen arayın veya WhatsApp'tan yazın, hızlıca yanınızdayım!
           </p>
         </div>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 fade-in-up">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-12 fade-in-up px-4">
           <Button 
             onClick={handleCall}
-            className="btn-neon group min-w-[200px] text-lg"
+            className="btn-neon group w-full sm:min-w-[200px] text-base sm:text-lg py-3 sm:py-2"
           >
-            <Phone className="w-6 h-6 mr-3 group-hover:animate-bounce" />
+            <Phone className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3 group-hover:animate-bounce" />
             Hemen Ara
           </Button>
           
           <Button 
             onClick={handleWhatsApp}
-            className="btn-neon-outline group min-w-[200px] text-lg"
+            className="btn-neon-outline group w-full sm:min-w-[200px] text-base sm:text-lg py-3 sm:py-2"
           >
-            <MessageCircle className="w-6 h-6 mr-3 group-hover:animate-bounce" />
+            <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3 group-hover:animate-bounce" />
             WhatsApp Chat
           </Button>
         </div>
 
         {/* Key features */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto fade-in-up">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6 max-w-4xl mx-auto fade-in-up px-4">
           {[
             { label: 'Profesyonel', icon: Car },
             { label: 'Güvenilir', icon: Shield },
@@ -100,11 +100,11 @@ const HeroSection = () => {
           ].map((feature, index) => (
             <div 
               key={index} 
-              className="card-premium text-center py-4"
+              className="card-premium text-center py-3 sm:py-4"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <feature.icon className="w-8 h-8 text-primary mx-auto mb-2" />
-              <p className="font-semibold text-primary">{feature.label}</p>
+              <feature.icon className="w-6 h-6 sm:w-8 sm:h-8 text-primary mx-auto mb-1 sm:mb-2" />
+              <p className="font-semibold text-primary text-sm sm:text-base">{feature.label}</p>
             </div>
           ))}
         </div>
