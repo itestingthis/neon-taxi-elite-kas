@@ -5,6 +5,7 @@ const LocationSection = () => {
   const locations = [
     { name: 'Kaş Merkez', time: '5 dk', popular: true },
     { name: 'Kalkan', time: '15 dk', popular: true },
+    { name: 'Antalya Kaş Kalkan', time: '10 dk', popular: true },
     { name: 'Antalya Havalimanı', time: '45 dk', popular: true },
     { name: 'Demre', time: '20 dk', popular: false },
     { name: 'Myra Antik Kenti', time: '25 dk', popular: false },
