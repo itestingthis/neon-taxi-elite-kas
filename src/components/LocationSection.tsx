@@ -1,5 +1,6 @@
 import { MapPin, Navigation, Clock, Phone, MessageCircle, Shield, Zap, DollarSign } from 'lucide-react';
 
+// Force refresh for MessageCircle import
 const LocationSection = () => {
   const locations = [
     { name: 'Kaş Merkez', time: '5 dk', popular: true },
