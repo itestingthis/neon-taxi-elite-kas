@@ -1,4 +1,4 @@
-import { Award, Shield, Clock, Users } from 'lucide-react';
+import { Award, Shield, Clock, Users, Car, Star } from 'lucide-react';
 
 const AboutSection = () => {
   const stats = [
@@ -57,14 +57,14 @@ const AboutSection = () => {
           <div className="relative">
             <div className="card-premium p-8 text-center">
               <div className="w-32 h-32 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full mx-auto mb-6 flex items-center justify-center">
-                <div className="text-6xl">🚗</div>
+                <Car className="w-16 h-16 text-primary" />
               </div>
               <h4 className="text-2xl font-bold text-primary mb-2">Gökhan</h4>
               <p className="text-muted-foreground mb-4">Profesyonel Sürücü</p>
               <div className="flex justify-center items-center gap-2">
                 <div className="flex">
                   {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-primary text-xl">⭐</span>
+                    <Star key={i} className="w-5 h-5 fill-primary text-primary" />
                   ))}
                 </div>
                 <span className="text-sm text-muted-foreground ml-2">4.9/5 (200+ değerlendirme)</span>

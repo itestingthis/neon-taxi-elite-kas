@@ -1,4 +1,4 @@
-import { MapPin, Navigation, Clock, Phone } from 'lucide-react';
+import { MapPin, Navigation, Clock, Phone, MessageCircle, Shield, Zap, DollarSign } from 'lucide-react';
 
 const LocationSection = () => {
   const locations = [
@@ -92,8 +92,9 @@ const LocationSection = () => {
 
             {/* Contact for Route Info */}
             <div className="card-premium">
-              <h3 className="text-xl font-bold text-primary mb-4">
-                📍 Gitme İstediğiniz Yer Listede Yok mu?
+              <h3 className="text-xl font-bold text-primary mb-4 flex items-center gap-3">
+                <MapPin className="w-6 h-6" />
+                Gitme İstediğiniz Yer Listede Yok mu?
               </h3>
               <p className="text-muted-foreground mb-6">
                 Kaş ve Kalkan çevresindeki tüm noktalara gidebilirim. 
@@ -106,9 +107,10 @@ const LocationSection = () => {
                     const message = encodeURIComponent('Merhaba Gökhan Bey, gitmek istediğim adres için fiyat öğrenmek istiyorum: [ADRES YAZIN]');
                     window.open(`https://wa.me/905555555555?text=${message}`, '_blank');
                   }}
-                  className="btn-neon-outline flex-1"
+                  className="btn-neon-outline flex-1 flex items-center justify-center gap-2"
                 >
-                  💬 Rota Sorgula
+                  <MessageCircle className="w-4 h-4" />
+                  Rota Sorgula
                 </button>
                 <button 
                   onClick={() => window.location.href = 'tel:+905555555555'}
@@ -125,22 +127,23 @@ const LocationSection = () => {
         {/* Service Promise */}
         <div className="mt-16 text-center">
           <div className="card-premium max-w-4xl mx-auto p-8">
-            <h3 className="text-2xl font-bold text-primary mb-4">
-              🎯 Hizmet Sözümüz
+            <h3 className="text-2xl font-bold text-primary mb-4 flex items-center justify-center gap-3">
+              <Shield className="w-7 h-7" />
+              Hizmet Sözümüz
             </h3>
             <div className="grid md:grid-cols-3 gap-6 mt-8">
               <div className="text-center">
-                <div className="text-4xl mb-3">⚡</div>
+                <Zap className="w-12 h-12 text-primary mx-auto mb-3" />
                 <h4 className="font-bold text-primary mb-2">Hızlı Ulaşım</h4>
                 <p className="text-sm text-muted-foreground">En kısa rotaları kullanırım</p>
               </div>
               <div className="text-center">
-                <div className="text-4xl mb-3">🛡️</div>
+                <Shield className="w-12 h-12 text-primary mx-auto mb-3" />
                 <h4 className="font-bold text-primary mb-2">Güvenli Yolculuk</h4>
                 <p className="text-sm text-muted-foreground">Sigortlı araç ve deneyimli sürücü</p>
               </div>
               <div className="text-center">
-                <div className="text-4xl mb-3">💰</div>
+                <DollarSign className="w-12 h-12 text-primary mx-auto mb-3" />
                 <h4 className="font-bold text-primary mb-2">Şeffaf Fiyat</h4>
                 <p className="text-sm text-muted-foreground">Başta anlaştığımız fiyat</p>
               </div>

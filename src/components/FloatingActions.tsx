@@ -1,4 +1,4 @@
-import { Phone, MessageCircle } from 'lucide-react';
+import { Phone, MessageCircle, Car } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 const FloatingActions = () => {
@@ -68,12 +68,16 @@ const FloatingActions = () => {
       <div className="hidden md:block">
         <div className="fixed top-0 left-0 right-0 z-40 bg-gradient-to-r from-primary to-accent text-primary-foreground py-2 text-center">
           <div className="flex items-center justify-center gap-4">
-            <span className="font-semibold">🚖 Gökhan Taxi - 7/24 Hizmet</span>
+            <span className="font-semibold flex items-center gap-2">
+              <Car className="w-5 h-5" />
+              Gökhan Taxi - 7/24 Hizmet
+            </span>
             <button
               onClick={handleCall}
-              className="bg-white/20 hover:bg-white/30 px-4 py-1 rounded-full font-bold transition-colors duration-300"
+              className="bg-white/20 hover:bg-white/30 px-4 py-1 rounded-full font-bold transition-colors duration-300 flex items-center gap-2"
             >
-              📞 +90 555 555 55 55
+              <Phone className="w-4 h-4" />
+              +90 555 555 55 55
             </button>
           </div>
         </div>

@@ -1,6 +1,6 @@
-import { Phone, MessageCircle, Star } from 'lucide-react';
+import { Phone, MessageCircle, Star, Car, Shield, Clock, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import heroBackground from '@/assets/hero-bg.jpg';
+import heroBackground from '@/assets/kalkan-kas-hero.jpg';
 
 const HeroSection = () => {
   const handleCall = () => {
@@ -93,17 +93,17 @@ const HeroSection = () => {
         {/* Key features */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto fade-in-up">
           {[
-            { label: 'Profesyonel', icon: '🚗' },
-            { label: 'Güvenilir', icon: '⭐' },
-            { label: 'Hızlı', icon: '⚡' },
-            { label: '7/24', icon: '🕐' }
+            { label: 'Profesyonel', icon: Car },
+            { label: 'Güvenilir', icon: Shield },
+            { label: 'Hızlı', icon: Users },
+            { label: '7/24', icon: Clock }
           ].map((feature, index) => (
             <div 
               key={index} 
               className="card-premium text-center py-4"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="text-2xl mb-2">{feature.icon}</div>
+              <feature.icon className="w-8 h-8 text-primary mx-auto mb-2" />
               <p className="font-semibold text-primary">{feature.label}</p>
             </div>
           ))}

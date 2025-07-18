@@ -1,4 +1,4 @@
-import { Star, Quote } from 'lucide-react';
+import { Star, Quote, Phone, Users, Trophy, Award } from 'lucide-react';
 
 const TestimonialsSection = () => {
   const testimonials = [
@@ -109,8 +109,9 @@ const TestimonialsSection = () => {
         {/* Call to Action */}
         <div className="mt-16 text-center">
           <div className="card-premium max-w-3xl mx-auto p-8">
-            <h3 className="text-2xl font-bold text-primary mb-4">
-              🌟 Siz de Deneyimlerinizi Paylaşın!
+            <h3 className="text-2xl font-bold text-primary mb-4 flex items-center justify-center gap-3">
+              <Star className="w-7 h-7" />
+              Siz de Deneyimlerinizi Paylaşın!
             </h3>
             <p className="text-muted-foreground mb-6">
               Hizmet aldıktan sonra deneyimlerinizi bizimle paylaşmayı unutmayın. 
@@ -123,16 +124,18 @@ const TestimonialsSection = () => {
                   const message = encodeURIComponent('Merhaba Gökhan Bey, hizmetiniz hakkında geri bildirim vermek istiyorum.');
                   window.open(`https://wa.me/905555555555?text=${message}`, '_blank');
                 }}
-                className="btn-neon-outline"
+                className="btn-neon-outline flex items-center justify-center gap-2"
               >
-                💬 Yorumunuzu Gönderin
+                <Quote className="w-4 h-4" />
+                Yorumunuzu Gönderin
               </button>
               
               <button 
                 onClick={() => window.location.href = 'tel:+905555555555'}
-                className="btn-neon"
+                className="btn-neon flex items-center justify-center gap-2"
               >
-                📞 Hemen Rezervasyon Yapın
+                <Phone className="w-4 h-4" />
+                Hemen Rezervasyon Yapın
               </button>
             </div>
           </div>
@@ -143,15 +146,15 @@ const TestimonialsSection = () => {
           <p className="text-muted-foreground mb-4">Bizi takip edin ve güncel bilgiler alın:</p>
           <div className="flex justify-center gap-4">
             <div className="flex items-center gap-2 bg-secondary/50 px-4 py-2 rounded-lg">
-              <span className="text-primary">⭐</span>
+              <Star className="w-4 h-4 text-primary" />
               <span className="text-sm">Google: 4.9/5</span>
             </div>
             <div className="flex items-center gap-2 bg-secondary/50 px-4 py-2 rounded-lg">
-              <span className="text-primary">👥</span>
+              <Users className="w-4 h-4 text-primary" />
               <span className="text-sm">1000+ Müşteri</span>
             </div>
             <div className="flex items-center gap-2 bg-secondary/50 px-4 py-2 rounded-lg">
-              <span className="text-primary">🏆</span>
+              <Trophy className="w-4 h-4 text-primary" />
               <span className="text-sm">15 Yıl Deneyim</span>
             </div>
           </div>

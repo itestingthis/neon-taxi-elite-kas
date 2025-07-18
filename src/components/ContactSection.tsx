@@ -1,4 +1,4 @@
-import { Phone, MessageCircle, MapPin, Clock, Mail, Send } from 'lucide-react';
+import { Phone, MessageCircle, MapPin, Clock, Mail, Send, Plane, AlertTriangle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -70,8 +70,9 @@ const ContactSection = () => {
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Info */}
           <div className="space-y-6">
-            <h3 className="text-2xl font-bold text-primary mb-8">
-              📞 Hemen Ulaşın
+            <h3 className="text-2xl font-bold text-primary mb-8 flex items-center gap-3">
+              <Phone className="w-7 h-7" />
+              Hemen Ulaşın
             </h3>
             
             {contactInfo.map((info, index) => (
@@ -102,14 +103,18 @@ const ContactSection = () => {
 
             {/* Quick Actions */}
             <div className="mt-8 space-y-4">
-              <h4 className="text-lg font-bold text-primary">🚀 Hızlı İşlemler</h4>
+              <h4 className="text-lg font-bold text-primary flex items-center gap-3">
+                <Send className="w-5 h-5" />
+                Hızlı İşlemler
+              </h4>
               
               <div className="flex flex-col gap-3">
                 <Button 
                   onClick={() => window.location.href = 'tel:+905555555555'}
-                  className="btn-neon w-full text-lg py-6"
+                  className="btn-neon w-full text-lg py-6 flex items-center justify-center gap-3"
                 >
-                  📞 Hemen Ara - Acil Durum
+                  <Phone className="w-5 h-5" />
+                  Hemen Ara - Acil Durum
                 </Button>
                 
                 <Button 
@@ -117,9 +122,10 @@ const ContactSection = () => {
                     const message = encodeURIComponent('Merhaba Gökhan Bey, havalimanı transferi rezervasyonu yapmak istiyorum.');
                     window.open(`https://wa.me/905555555555?text=${message}`, '_blank');
                   }}
-                  className="btn-neon-outline w-full text-lg py-6"
+                  className="btn-neon-outline w-full text-lg py-6 flex items-center justify-center gap-3"
                 >
-                  ✈️ Havalimanı Transfer Rezervasyon
+                  <Plane className="w-5 h-5" />
+                  Havalimanı Transfer Rezervasyon
                 </Button>
               </div>
             </div>
@@ -127,8 +133,9 @@ const ContactSection = () => {
 
           {/* Contact Form */}
           <div className="card-premium">
-            <h3 className="text-2xl font-bold text-primary mb-6">
-              💬 Mesaj Gönderin
+            <h3 className="text-2xl font-bold text-primary mb-6 flex items-center gap-3">
+              <MessageCircle className="w-7 h-7" />
+              Mesaj Gönderin
             </h3>
             
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -212,8 +219,9 @@ const ContactSection = () => {
         {/* Emergency Contact */}
         <div className="mt-16 text-center">
           <div className="card-premium max-w-2xl mx-auto p-8 border-primary/30">
-            <h3 className="text-2xl font-bold text-primary mb-4">
-              🚨 Acil Durum İletişim
+            <h3 className="text-2xl font-bold text-primary mb-4 flex items-center justify-center gap-3">
+              <AlertTriangle className="w-7 h-7 text-red-500" />
+              Acil Durum İletişim
             </h3>
             <p className="text-muted-foreground mb-6">
               Acil durumda, gece geç saatlerde, havalimanı transferi veya 
@@ -221,8 +229,9 @@ const ContactSection = () => {
             </p>
             
             <div className="bg-primary/5 border border-primary/20 rounded-xl p-6">
-              <div className="text-3xl font-bold text-primary mb-2">
-                📞 +90 555 555 55 55
+              <div className="text-3xl font-bold text-primary mb-2 flex items-center justify-center gap-3">
+                <Phone className="w-8 h-8" />
+                +90 555 555 55 55
               </div>
               <p className="text-muted-foreground">
                 Her zaman açık hat - Hemen cevap veriyorum

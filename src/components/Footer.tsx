@@ -1,4 +1,4 @@
-import { Phone, MessageCircle, MapPin, Clock, Star } from 'lucide-react';
+import { Phone, MessageCircle, MapPin, Clock, Star, Car, AlertTriangle } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -23,8 +23,9 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="lg:col-span-2">
-            <h3 className="text-2xl font-black text-primary mb-4">
-              🚖 Gökhan Taxi
+            <h3 className="text-2xl font-black text-primary mb-4 flex items-center gap-3">
+              <Car className="w-8 h-8" />
+              Gökhan Taxi
             </h3>
             <p className="text-muted-foreground mb-6 text-lg leading-relaxed">
               Kaş ve Kalkan bölgesinde 15+ yıldır profesyonel taksi hizmeti veriyoruz. 
@@ -135,17 +136,19 @@ const Footer = () => {
 
         {/* Emergency Contact Banner */}
         <div className="mt-8 bg-gradient-to-r from-primary/20 to-accent/20 border border-primary/30 rounded-xl p-6 text-center">
-          <h5 className="text-lg font-bold text-primary mb-2">
-            🚨 Acil Durum? Hemen Arayın!
+          <h5 className="text-lg font-bold text-primary mb-2 flex items-center justify-center gap-3">
+            <AlertTriangle className="w-6 h-6 text-red-500" />
+            Acil Durum? Hemen Arayın!
           </h5>
           <p className="text-muted-foreground mb-4">
             Gece geç saatlerde, havalimanı transferi veya acil ulaşım için
           </p>
           <button
             onClick={() => window.location.href = 'tel:+905555555555'}
-            className="btn-neon text-lg px-8 py-3"
+            className="btn-neon text-lg px-8 py-3 flex items-center gap-3"
           >
-            📞 +90 555 555 55 55
+            <Phone className="w-5 h-5" />
+            +90 555 555 55 55
           </button>
         </div>
       </div>

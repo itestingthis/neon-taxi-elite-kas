@@ -1,4 +1,4 @@
-import { Plane, MapPin, Car, Route } from 'lucide-react';
+import { Plane, MapPin, Car, Route, Phone, MessageCircle } from 'lucide-react';
 
 const ServicesSection = () => {
   const services = [
@@ -101,8 +101,9 @@ const ServicesSection = () => {
         {/* Emergency Contact */}
         <div className="mt-16 text-center">
           <div className="card-premium max-w-2xl mx-auto p-8">
-            <h3 className="text-2xl font-bold text-primary mb-4">
-              🚨 Acil Durum? Hemen Arayın!
+            <h3 className="text-2xl font-bold text-primary mb-4 flex items-center justify-center gap-3">
+              <Phone className="w-7 h-7 text-red-500" />
+              Acil Durum? Hemen Arayın!
             </h3>
             <p className="text-muted-foreground mb-6">
               7/24 acil durum transferi için her zaman ulaşabilirsiniz
@@ -110,18 +111,20 @@ const ServicesSection = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button 
                 onClick={() => window.location.href = 'tel:+905555555555'}
-                className="btn-neon"
+                className="btn-neon flex items-center justify-center gap-2"
               >
-                📞 +90 555 555 55 55
+                <Phone className="w-5 h-5" />
+                +90 555 555 55 55
               </button>
               <button 
                 onClick={() => {
                   const message = encodeURIComponent('🚨 ACİL DURUM! Taksi ihtiyacım var.');
                   window.open(`https://wa.me/905555555555?text=${message}`, '_blank');
                 }}
-                className="btn-neon-outline"
+                className="btn-neon-outline flex items-center justify-center gap-2"
               >
-                💬 Acil WhatsApp
+                <MessageCircle className="w-5 h-5" />
+                Acil WhatsApp
               </button>
             </div>
           </div>
