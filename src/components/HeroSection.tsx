@@ -4,12 +4,12 @@ import heroBackground from '@/assets/kalkan-kas-hero.jpg';
 
 const HeroSection = () => {
   const handleCall = () => {
-    window.location.href = 'tel:+905555555555'; // Replace with actual number
+    window.location.href = 'tel:+905462558064';
   };
 
   const handleWhatsApp = () => {
     const message = encodeURIComponent('Merhaba Gökhan Bey, taksi hizmeti almak istiyorum.');
-    window.open(`https://wa.me/905555555555?text=${message}`, '_blank'); // Replace with actual number
+    window.open(`https://wa.me/905462558064?text=${message}`, '_blank');
   };
 
   return (

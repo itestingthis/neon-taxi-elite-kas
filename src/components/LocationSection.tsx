@@ -38,7 +38,7 @@ const LocationSection = () => {
               {/* You can replace this with actual Google Maps embed */}
               <iframe
                 className="absolute inset-0 w-full h-full"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d100000!2d29.6378!3d36.2020!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14c38a8c5b2e6b5b%3A0x3e1e6b2e6b2e6b2e!2sKa%C5%9F%2C%20Antalya!5e0!3m2!1str!2str!4v1234567890"
+                src="https://share.google/NJF77nsn9jisccjzV"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
@@ -106,7 +106,7 @@ const LocationSection = () => {
                 <button 
                   onClick={() => {
                     const message = encodeURIComponent('Merhaba Gökhan Bey, gitmek istediğim adres için fiyat öğrenmek istiyorum: [ADRES YAZIN]');
-                    window.open(`https://wa.me/905555555555?text=${message}`, '_blank');
+                    window.open(`https://wa.me/905462558064?text=${message}`, '_blank');
                   }}
                   className="btn-neon-outline flex-1 flex items-center justify-center gap-2"
                 >
@@ -114,7 +114,7 @@ const LocationSection = () => {
                   Rota Sorgula
                 </button>
                 <button 
-                  onClick={() => window.location.href = 'tel:+905555555555'}
+                  onClick={() => window.location.href = 'tel:+905462558064'}
                   className="btn-neon flex-1"
                 >
                   <Phone className="w-4 h-4 mr-2" />

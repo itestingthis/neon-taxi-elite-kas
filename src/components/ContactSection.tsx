@@ -17,24 +17,24 @@ const ContactSection = () => {
     const whatsappMessage = encodeURIComponent(
       `Merhaba Gökhan Bey,\n\nAdım: ${formData.name}\nTelefonum: ${formData.phone}\nHizmet: ${formData.service}\n\nMesajım: ${formData.message}`
     );
-    window.open(`https://wa.me/905555555555?text=${whatsappMessage}`, '_blank');
+    window.open(`https://wa.me/905462558064?text=${whatsappMessage}`, '_blank');
   };
 
   const contactInfo = [
     {
       icon: Phone,
       title: 'Telefon',
-      value: '+90 555 555 55 55',
-      action: () => window.location.href = 'tel:+905555555555',
+      value: '+90 546 255 80 64',
+      action: () => window.location.href = 'tel:+905462558064',
       description: '7/24 arayabilirsiniz'
     },
     {
       icon: MessageCircle,
       title: 'WhatsApp',
-      value: '+90 555 555 55 55',
+      value: '+90 546 255 80 64',
       action: () => {
         const message = encodeURIComponent('Merhaba Gökhan Bey, taksi hizmeti almak istiyorum.');
-        window.open(`https://wa.me/905555555555?text=${message}`, '_blank');
+        window.open(`https://wa.me/905462558064?text=${message}`, '_blank');
       },
       description: 'Anlık mesajlaşma'
     },
@@ -110,7 +110,7 @@ const ContactSection = () => {
               
               <div className="flex flex-col gap-3">
                 <Button 
-                  onClick={() => window.location.href = 'tel:+905555555555'}
+                  onClick={() => window.location.href = 'tel:+905462558064'}
                   className="btn-neon w-full text-lg py-6 flex items-center justify-center gap-3"
                 >
                   <Phone className="w-5 h-5" />
@@ -120,7 +120,7 @@ const ContactSection = () => {
                 <Button 
                   onClick={() => {
                     const message = encodeURIComponent('Merhaba Gökhan Bey, havalimanı transferi rezervasyonu yapmak istiyorum.');
-                    window.open(`https://wa.me/905555555555?text=${message}`, '_blank');
+                    window.open(`https://wa.me/905462558064?text=${message}`, '_blank');
                   }}
                   className="btn-neon-outline w-full text-lg py-6 flex items-center justify-center gap-3"
                 >
@@ -231,7 +231,7 @@ const ContactSection = () => {
             <div className="bg-primary/5 border border-primary/20 rounded-xl p-6">
               <div className="text-3xl font-bold text-primary mb-2 flex items-center justify-center gap-3">
                 <Phone className="w-8 h-8" />
-                +90 555 555 55 55
+                +90 546 255 80 64
               </div>
               <p className="text-muted-foreground">
                 Her zaman açık hat - Hemen cevap veriyorum

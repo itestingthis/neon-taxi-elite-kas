@@ -122,7 +122,7 @@ const TestimonialsSection = () => {
               <button 
                 onClick={() => {
                   const message = encodeURIComponent('Merhaba Gökhan Bey, hizmetiniz hakkında geri bildirim vermek istiyorum.');
-                  window.open(`https://wa.me/905555555555?text=${message}`, '_blank');
+                  window.open(`https://wa.me/905462558064?text=${message}`, '_blank');
                 }}
                 className="btn-neon-outline flex items-center justify-center gap-2"
               >
@@ -131,7 +131,7 @@ const TestimonialsSection = () => {
               </button>
               
               <button 
-                onClick={() => window.location.href = 'tel:+905555555555'}
+                onClick={() => window.location.href = 'tel:+905462558064'}
                 className="btn-neon flex items-center justify-center gap-2"
               >
                 <Phone className="w-4 h-4" />

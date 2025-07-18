@@ -85,7 +85,7 @@ const ServicesSection = () => {
                 <button 
                   onClick={() => {
                     const message = encodeURIComponent(`Merhaba Gökhan Bey, ${service.title} hizmeti hakkında bilgi almak istiyorum.`);
-                    window.open(`https://wa.me/905555555555?text=${message}`, '_blank');
+                    window.open(`https://wa.me/905462558064?text=${message}`, '_blank');
                   }}
                   className="w-full btn-neon-outline text-center py-3 group"
                 >
@@ -110,16 +110,16 @@ const ServicesSection = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button 
-                onClick={() => window.location.href = 'tel:+905555555555'}
+                onClick={() => window.location.href = 'tel:+905462558064'}
                 className="btn-neon flex items-center justify-center gap-2"
               >
                 <Phone className="w-5 h-5" />
-                +90 555 555 55 55
+                +90 546 255 80 64
               </button>
               <button 
                 onClick={() => {
                   const message = encodeURIComponent('🚨 ACİL DURUM! Taksi ihtiyacım var.');
-                  window.open(`https://wa.me/905555555555?text=${message}`, '_blank');
+                  window.open(`https://wa.me/905462558064?text=${message}`, '_blank');
                 }}
                 className="btn-neon-outline flex items-center justify-center gap-2"
               >

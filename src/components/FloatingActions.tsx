@@ -18,12 +18,12 @@ const FloatingActions = () => {
   }, []);
 
   const handleCall = () => {
-    window.location.href = 'tel:+905555555555';
+    window.location.href = 'tel:+905462558064';
   };
 
   const handleWhatsApp = () => {
     const message = encodeURIComponent('Merhaba Gökhan Bey, taksi hizmeti almak istiyorum.');
-    window.open(`https://wa.me/905555555555?text=${message}`, '_blank');
+    window.open(`https://wa.me/905462558064?text=${message}`, '_blank');
   };
 
   return (
@@ -77,7 +77,7 @@ const FloatingActions = () => {
               className="bg-white/20 hover:bg-white/30 px-4 py-1 rounded-full font-bold transition-colors duration-300 flex items-center gap-2"
             >
               <Phone className="w-4 h-4" />
-              +90 555 555 55 55
+              +90 546 255 80 64
             </button>
           </div>
         </div>

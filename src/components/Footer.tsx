@@ -48,17 +48,17 @@ const Footer = () => {
             {/* Quick Contact */}
             <div className="space-y-3">
               <button
-                onClick={() => window.location.href = 'tel:+905555555555'}
+                onClick={() => window.location.href = 'tel:+905462558064'}
                 className="flex items-center gap-3 text-primary hover:text-accent transition-colors group"
               >
                 <Phone className="w-5 h-5 group-hover:animate-bounce" />
-                <span className="font-bold">+90 555 555 55 55</span>
+                <span className="font-bold">+90 546 255 80 64</span>
               </button>
               
               <button
                 onClick={() => {
                   const message = encodeURIComponent('Merhaba Gökhan Bey, taksi hizmeti almak istiyorum.');
-                  window.open(`https://wa.me/905555555555?text=${message}`, '_blank');
+                  window.open(`https://wa.me/905462558064?text=${message}`, '_blank');
                 }}
                 className="flex items-center gap-3 text-green-500 hover:text-green-400 transition-colors group"
               >
@@ -144,11 +144,11 @@ const Footer = () => {
             Gece geç saatlerde, havalimanı transferi veya acil ulaşım için
           </p>
           <button
-            onClick={() => window.location.href = 'tel:+905555555555'}
+            onClick={() => window.location.href = 'tel:+905462558064'}
             className="btn-neon text-lg px-8 py-3 flex items-center gap-3"
           >
             <Phone className="w-5 h-5" />
-            +90 555 555 55 55
+            +90 546 255 80 64
           </button>
         </div>
       </div>
