@@ -4,6 +4,7 @@ export default {
     outDir: 'dist'
   },
   server: {
+    port: 8080,
     open: true
   }
 }
