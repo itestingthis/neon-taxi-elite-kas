@@ -1,195 +1,226 @@
-import { Phone, MessageCircle, Car, Sun, Moon } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { useState } from "react";
 import { motion } from "framer-motion";
+import { Car, Phone, MapPin, Star, Clock, Moon, Sun, Zap, Shield } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { useTheme } from "next-themes";
 
 export const HeroSection = () => {
   const phoneNumber = "+905462558064";
-  const whatsappNumber = "905462558064";
   const { theme, setTheme } = useTheme();
 
-  const makeCall = () => {
-    window.location.href = `tel:${phoneNumber}`;
-  };
-
-  const sendWhatsAppMessage = (message = "Merhaba Gökhan Bey, taksi hizmeti almak istiyorum.") => {
-    const encodedMessage = encodeURIComponent(message);
-    window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
-  };
-
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-primary/10 to-primary/20 overflow-hidden">
-      {/* Animated Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        {[...Array(15)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute"
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ 
-              opacity: [0.1, 0.3, 0.1],
-              scale: [1, 1.2, 1],
-              rotate: [0, 180, 360]
-            }}
-            transition={{
-              duration: 8 + Math.random() * 4,
-              repeat: Infinity,
-              delay: Math.random() * 5
-            }}
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              fontSize: `${20 + Math.random() * 40}px`
-            }}
-          >
-            <Car />
-          </motion.div>
-        ))}
-      </div>
+    <section className="relative min-h-screen bg-gradient-to-br from-background via-secondary/20 to-background overflow-hidden">
+      {/* Background Effects */}
+      <div className="absolute inset-0 bg-gradient-taxi opacity-10" />
+      
+      {/* Animated Background Particles */}
+      {[...Array(20)].map((_, i) => (
+        <motion.div
+          key={i}
+          className="absolute w-2 h-2 bg-primary/30 rounded-full"
+          initial={{
+            x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000),
+            y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 800),
+          }}
+          animate={{
+            x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000),
+            y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 800),
+          }}
+          transition={{
+            duration: Math.random() * 10 + 10,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+        />
+      ))}
+      
+      {/* Animated Background Elements */}
+      <motion.div 
+        className="absolute top-20 left-10 w-32 h-32 bg-primary/10 rounded-full blur-xl"
+        animate={{ 
+          x: [0, 100, 0],
+          y: [0, -50, 0],
+          scale: [1, 1.2, 1]
+        }}
+        transition={{ 
+          duration: 8,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
+      />
+      
+      <motion.div 
+        className="absolute bottom-20 right-10 w-40 h-40 bg-taxi-orange/10 rounded-full blur-xl"
+        animate={{ 
+          x: [0, -80, 0],
+          y: [0, 30, 0],
+          scale: [1, 0.8, 1]
+        }}
+        transition={{ 
+          duration: 6,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
+      />
 
       {/* Theme Toggle */}
       <motion.div 
-        className="absolute top-4 right-4 z-20"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5 }}
+        className="absolute top-6 right-6 z-50"
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 1 }}
       >
         <Button
           variant="outline"
           size="icon"
           onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-          className="glass-effect hover:scale-110 transition-transform duration-300"
+          className="glass-effect hover:bg-primary/20 glow-border"
         >
-          <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-          <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+          {theme === "dark" ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
         </Button>
       </motion.div>
       
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-primary/30" />
-      
-      {/* Content */}
-      <div className="relative z-10 text-center px-4 max-w-6xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="mb-8"
-        >
-          <motion.div
-            className="inline-flex items-center gap-4 mb-6 p-4 rounded-full glass-effect"
-            animate={{ y: [0, -5, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-          >
-            <Car className="w-12 h-12 text-primary animate-bounce-taxi" />
-            <span className="text-2xl font-bold text-primary">Gökhan Taksi</span>
-          </motion.div>
-        </motion.div>
-
-        <motion.h1 
-          className="text-5xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-primary via-primary/80 to-primary bg-clip-text text-transparent"
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          Kaş & Kalkan
-          <motion.span 
-            className="block text-4xl md:text-6xl mt-4"
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-screen py-20">
+          
+          {/* Left Content */}
+          <motion.div 
+            className="space-y-8"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.8 }}
           >
-            Güvenilir Taksi Hizmeti
-          </motion.span>
-        </motion.h1>
-        
-        <motion.p 
-          className="text-xl md:text-3xl mb-12 text-muted-foreground max-w-3xl mx-auto"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-        >
-          7/24 profesyonel transfer hizmeti ile 
-          <span className="text-primary font-semibold"> güvenle seyahat edin</span>
-        </motion.p>
-        
-        <motion.div 
-          className="flex flex-col sm:flex-row gap-6 justify-center"
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-        >
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <Button 
-              onClick={makeCall}
-              size="lg"
-              className="bg-green-600 hover:bg-green-700 text-white px-12 py-8 text-xl font-bold rounded-full shadow-2xl hover:shadow-green-500/25 transition-all duration-300 animate-glow"
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.6 }}
             >
-              <Phone className="w-8 h-8 mr-3 animate-bounce" />
-              Hemen Ara
-            </Button>
+              <h1 className="text-5xl md:text-7xl font-bold leading-tight">
+                <span className="block text-foreground">Güvenilir</span>
+                <span className="block text-shimmer">
+                  Taksi Hizmeti
+                </span>
+              </h1>
+            </motion.div>
+            
+            <motion.p 
+              className="text-xl text-muted-foreground leading-relaxed"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.6 }}
+            >
+              Kaş ve Kalkan bölgesinde 7/24 güvenilir taksi hizmeti. 
+              Havalimanı transferi, şehir içi ulaşım ve VIP hizmetlerimizle her an yanınızdayız.
+            </motion.p>
+            
+            {/* Quick Info Cards */}
+            <motion.div 
+              className="grid grid-cols-2 gap-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6, duration: 0.6 }}
+            >
+              <motion.div 
+                className="p-4 glass-effect rounded-lg card-hover floating"
+                whileHover={{ scale: 1.05 }}
+              >
+                <Clock className="w-6 h-6 text-primary mb-2" />
+                <p className="text-sm font-medium text-foreground">7/24 Hizmet</p>
+              </motion.div>
+              <motion.div 
+                className="p-4 glass-effect rounded-lg card-hover floating"
+                whileHover={{ scale: 1.05 }}
+                style={{ animationDelay: "1s" }}
+              >
+                <Star className="w-6 h-6 text-primary mb-2" />
+                <p className="text-sm font-medium text-foreground">5 Yıldız</p>
+              </motion.div>
+            </motion.div>
+            
+            {/* Action Buttons */}
+            <motion.div 
+              className="flex flex-col sm:flex-row gap-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8, duration: 0.6 }}
+            >
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Button 
+                  size="lg" 
+                  className="group gradient-glow text-white border-0 relative overflow-hidden"
+                  onClick={() => {
+                    window.open(`tel:${phoneNumber}`, '_self');
+                  }}
+                >
+                  <Phone className="w-5 h-5 mr-2 group-hover:animate-bounce-taxi" />
+                  Hemen Ara
+                </Button>
+              </motion.div>
+              
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Button 
+                  variant="outline" 
+                  size="lg"
+                  className="glass-effect hover:bg-primary/10 glow-border"
+                  onClick={() => {
+                    window.open(`https://wa.me/905462558064`, '_blank');
+                  }}
+                >
+                  <MapPin className="w-5 h-5 mr-2" />
+                  WhatsApp
+                </Button>
+              </motion.div>
+            </motion.div>
           </motion.div>
           
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+          {/* Right Content - Animated Taxi */}
+          <motion.div 
+            className="relative"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <Button 
-              onClick={() => sendWhatsAppMessage()}
-              variant="outline"
-              size="lg"
-              className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground px-12 py-8 text-xl font-bold rounded-full shadow-2xl glass-effect transition-all duration-300"
+            <motion.div 
+              className="relative floating"
             >
-              <MessageCircle className="w-8 h-8 mr-3" />
-              WhatsApp
-            </Button>
-          </motion.div>
-        </motion.div>
-
-        {/* Taxi Stats */}
-        <motion.div 
-          className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1 }}
-        >
-          {[
-            { number: "7/24", label: "Hizmet" },
-            { number: "5+", label: "Yıl Tecrübe" },
-            { number: "1000+", label: "Mutlu Müşteri" }
-          ].map((stat, index) => (
-            <motion.div
-              key={index}
-              className="text-center p-6 rounded-xl glass-effect"
-              whileHover={{ scale: 1.05, y: -5 }}
-              transition={{ duration: 0.3 }}
-            >
-              <div className="text-4xl font-bold text-primary mb-2">{stat.number}</div>
-              <div className="text-muted-foreground font-medium">{stat.label}</div>
+              <div className="relative p-8">
+                <motion.div 
+                  className="w-64 h-64 mx-auto bg-gradient-to-br from-primary/20 to-taxi-orange/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-primary/30 glow-border"
+                  whileHover={{ scale: 1.05, rotate: 5 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <Car className="w-32 h-32 text-primary animate-drive-in" />
+                </motion.div>
+                
+                {/* Floating Icons */}
+                <motion.div 
+                  className="absolute top-0 right-0 p-3 glass-effect rounded-full card-hover"
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                >
+                  <Shield className="w-6 h-6 text-primary" />
+                </motion.div>
+                
+                <motion.div 
+                  className="absolute bottom-0 left-0 p-3 glass-effect rounded-full card-hover"
+                  animate={{ y: [0, -10, 0] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                >
+                  <Zap className="w-6 h-6 text-taxi-orange" />
+                </motion.div>
+                
+                <motion.div 
+                  className="absolute top-1/2 left-0 p-3 glass-effect rounded-full card-hover"
+                  animate={{ x: [0, 10, 0] }}
+                  transition={{ duration: 3, repeat: Infinity }}
+                >
+                  <Clock className="w-6 h-6 text-primary" />
+                </motion.div>
+              </div>
             </motion.div>
-          ))}
-        </motion.div>
+          </motion.div>
+        </div>
       </div>
-      
-      {/* Floating Taxi Animation */}
-      <motion.div
-        className="absolute bottom-10 left-10 text-primary opacity-20"
-        animate={{
-          x: [0, 100, 0],
-          y: [0, -20, 0],
-          rotate: [0, 5, 0]
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
-      >
-        <Car size={60} />
-      </motion.div>
     </section>
   );
 };
