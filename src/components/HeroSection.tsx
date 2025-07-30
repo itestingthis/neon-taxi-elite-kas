@@ -195,8 +195,6 @@ export const HeroSection = () => {
                 {/* Floating Icons */}
                 <motion.div 
                   className="absolute top-0 right-0 p-3 glass-effect rounded-full card-hover"
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                 >
                   <Shield className="w-6 h-6 text-primary" />
                 </motion.div>

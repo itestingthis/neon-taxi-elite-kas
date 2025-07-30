@@ -51,7 +51,7 @@ export const AboutSection = () => {
           {features.map((feature, index) => (
             <motion.div 
               key={index}
-              className="text-center p-6 rounded-xl bg-card/50 backdrop-blur-sm border border-border/50 card-hover glow-border group"
+              className="text-center p-6 rounded-xl bg-card/50 backdrop-blur-sm border border-border/50 card-hover group"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ 
@@ -63,7 +63,6 @@ export const AboutSection = () => {
             >
               <motion.div 
                 className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-primary/20 to-taxi-orange/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-all duration-300"
-                whileHover={{ rotate: 10 }}
               >
                 <feature.icon className="w-8 h-8 text-primary group-hover:text-taxi-orange transition-colors duration-300" />
               </motion.div>
